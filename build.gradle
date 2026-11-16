@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '5.3.9'
+}
+
+group = 'com.qa'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '5.3.9'
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+
+
+    testImplementation 'io.cucumber:cucumber-java:7.34.2'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.34.2'
+
+    testImplementation 'org.junit.platform:junit-platform-suite'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.35.0'
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy 'aggregate'
+}

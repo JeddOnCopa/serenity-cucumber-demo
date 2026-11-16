@@ -1,0 +1,24 @@
+# Gradle
+.gradle/
+build/
+
+# Maven / Serenity generated reports
+target/
+
+# IntelliJ Idea
+.idea/
+*.iml
+out/
+
+# Evidencias generadas
+evidencias/
+
+# Archivos compilados
+*.class
+
+# Logs
+*.log
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
